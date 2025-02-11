@@ -1,0 +1,19 @@
+all: safeadd.exe safesubtract.exe safemultiply.exe safedivide.exe typesinfo.exe
+
+safeadd.exe: safeint.c util.c safeadd.c
+	gcc safeint.c util.c safeadd.c -o safeadd.exe
+
+safesubtract.exe: safeint.c util.c safesubtract.c
+	gcc safeint.c util.c safesubtract.c -o safesubtract.exe
+
+safemultiply.exe: safeint.c util.c safemultiply.c
+	gcc safeint.c util.c safemultiply.c -o safemultiply.exe
+
+safedivide.exe: safeint.c util.c safedivide.c
+	gcc safeint.c util.c safedivide.c -o safedivide.exe
+
+typesinfo.exe: typesinfo.c
+	gcc typesinfo.c -o typesinfo.exe
+
+clean:
+	del /f safeadd.exe safesubtract.exe safemultiply.exe safedivide.exe typesinfo.exe
